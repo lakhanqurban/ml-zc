@@ -1,0 +1,39 @@
+# Fly.io deployment configuration.
+#
+#   fly launch --no-deploy          # creates the app from this file
+#   fly deploy                     # builds the image and starts the machines
+#   fly open                       # opens the public URL
+#   fly status                     # check the machines
+#   fly logs                       # tail the logs
+#
+# The free allowance covers one `shared-cpu-1x` machine, which is plenty for a
+# 1.5 MB model. `auto_stop_machines` lets the service sleep when idle so it
+# does not burn the allowance, and `auto_start_machines` wakes it on the first
+# request.
+
+app = "hotel-cancellation"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "9696"
+
+[http_service]
+  internal_port = 9696
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[http_service.checks]]
+    interval = "30s"
+    timeout = "5s"
+    method = "GET"
+    path = "/health"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
