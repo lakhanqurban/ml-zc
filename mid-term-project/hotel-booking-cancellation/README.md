@@ -1,4 +1,21 @@
 <div align="center">
+# Hotel Booking Cancellation
+
+### Predicting which hotel reservations will be cancelled
+
+**ML Zoomcamp 2026 — Midterm Project** · Binary classification · End-to-end ML service
+
+[![Python](https://img.shields.io/badge/python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.7.2-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![pandas](https://img.shields.io/badge/pandas-2.3.2-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-3.2.0-DD2B0B?logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.119.1-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Data License](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey)](https://creativecommons.org/licenses/by/4.0/)
+[![Code License](https://img.shields.io/badge/code-MIT-green)](LICENSE)
+[![ML Zoomcamp](https://img.shields.io/badge/ML%20Zoomcamp-2026-1f6feb)](https://github.com/DataTalksClub/machine-learning-zoomcamp)
+
+</div>
 
 ---
 
