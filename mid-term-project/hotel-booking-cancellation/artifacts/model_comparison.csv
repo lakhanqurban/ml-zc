@@ -1,0 +1,12 @@
+model,config,roc_auc,roc_auc_std,f1,pr_auc,seconds
+random_forest,"n=500,depth=20",0.9268,0.0023,0.7622,0.8976,19.0
+random_forest,n=300,0.9259,0.0025,0.7784,0.8979,13.0
+xgboost,"n=500,d=8,lr=0.05",0.9258,0.0022,0.7678,0.8948,10.8
+xgboost,"n=300,d=6,lr=0.1",0.9218,0.0022,0.7576,0.8891,5.8
+random_forest,"n=300,depth=15",0.9165,0.0019,0.7276,0.8838,10.6
+xgboost,"n=300,d=4,lr=0.05",0.9047,0.0021,0.719,0.8659,3.8
+decision_tree,"depth=8,leaf=20",0.8818,0.0019,0.6798,0.8091,2.4
+logistic_regression,C=1.0,0.8787,0.0024,0.6735,0.8337,2.3
+logistic_regression,C=0.1,0.8786,0.0023,0.6732,0.8337,2.3
+logistic_regression,"C=1.0,balanced",0.8785,0.0024,0.7214,0.8325,2.4
+decision_tree,depth=None,0.8035,0.0022,0.7499,0.6571,3.2
