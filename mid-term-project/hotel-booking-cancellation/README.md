@@ -56,8 +56,7 @@
 | 8  | [How to run](#8-how-to-run)                                                       | Setup → data → train → serve → predict                    |
 | 9  | [API](#9-api)                                                                     | Endpoints, examples, and error handling                       |
 | 10 | [Containerisation &amp; cloud deployment](#10-containerisation--cloud-deployment) | Docker, Compose, Fly.io, Render, Kubernetes                   |
-| 11 | [Deployment evidence](#11-deployment-evidence)                                    | Verified transcripts                                          |
-| 12 | [What this repository provides](#12-what-this-repository-provides)                | Where each piece of the solution lives                        |
+| 11 | [Deployment evidence](#11-deployment-evidence)                                    | Verified transcripts                           |
 
 ---
 
