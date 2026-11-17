@@ -383,7 +383,6 @@ with the EDA: party size affects *when* a booking is made rather than
 
 ```
 
----
 
 ## 8. How to run
 
@@ -703,7 +702,7 @@ healthy
 | `POST /predict` (No Deposit, lead_time 120) | `{"conversion_probability":0.298489,"cancelled":false,...}`    |
 | `POST /predict` (Non Refund, lead_time 400) | `{"conversion_probability":0.995422,"cancelled":true,...}`     |
 
-**Reproduce it yourself:**
+**Reproduce:**
 
 ```bash
 make docker-test
@@ -720,29 +719,6 @@ The container's prediction is **identical** to the local service, confirming
 that the artifact, the preprocessing and the threshold all transfer correctly.
 The `$PORT` override was verified too: running with `-e PORT=8080` makes the
 container listen on 8080 and the health check still passes.
-
----
-
-## 12. What this repository provides
-
-| criterion                                                                         | where to look                                                                                        |
-| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Problem described: what is predicted, who benefits, how the model is used         | [§1](#1-the-problem)                                                                                 |
-| Dataset documented with provenance and a reproducible, checksum-verified download | [§2](#2-dataset), `data/download_data.py`                                                          |
-| EDA: distributions, missing values, target analysis, segment analysis             | [§3](#3-eda-summary), `notebook.ipynb` §4–5                                                      |
-| Multiple model families trained, hyper-parameters tuned, comparison table         | [§4.2](#42-model-comparison--5-fold-stratified-cv-on-the-training-split), `notebook.ipynb` §8     |
-| Model selection justified, not just "highest score"                               | [§5](#5-model-selection)                                                                             |
-| Decision threshold tuned on validation (not left at 0.5)                          | [§4.1](#41-headline-metrics), `notebook.ipynb` §10                                                |
-| Calibration verified overall and per subgroup                                     | [§4.4](#44-calibration), `tools/check_subgroups.py`                                                |
-| Feature-importance analysis                                                       | [§6](#6-feature-importance), `artifacts/permutation_importance.csv`                                |
-| Notebook executed end-to-end                                                      | `notebook.ipynb` — 50 cells, 0 errors, 9 figures                                                  |
-| Notebook exported to training and serving scripts                                 | `train.py`, `serve.py`, `predict.py`                                                           |
-| Feature engineering shared between notebook, training and serving                 | `features.py`, `transformers.py`                                                                 |
-| Dependencies pinned + virtual environment instructions                            | `requirements.txt`, `requirements-dev.txt`, [§8.1](#81-setup)                                    |
-| Containerisation with build and run instructions                                  | `Dockerfile`, [§10.1](#101-docker)                                                                 |
-| Deployment configuration for a cloud host                                         | `docker-compose.yml`, `fly.toml`, `render.yaml`, [§10](#10-containerisation--cloud-deployment) |
-| Reproducible from a fresh clone                                                   | checksum-verified download, `make setup && make data && make train`                                |
-| Identical results on CPU and GPU                                                  | [§8.3](#83-train)                                                                                    |
 
 ---
 
