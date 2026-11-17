@@ -651,35 +651,7 @@ make compose-logs   # tail the logs
 make compose-down   # stop and remove
 ```
 
-### 10.3 Fly.io (recommended)
-
-`fly.toml` is checked in with the region, machine size, health check and
-auto-stop/auto-start already set, so the free allowance covers it.
-
-```bash
-# install the CLI once: https://fly.io/docs/hands-on/install-flyctl/
-fly auth login
-
-make fly-deploy     # fly launch --no-deploy && fly deploy
-fly status          # check the machines
-fly open            # open the public URL
-fly logs            # tail the logs
-```
-
-Fly.io gives you a public URL of the form
-`https://hotel-cancellation.fly.dev`:
-
-```bash
-curl -s https://hotel-cancellation.fly.dev/health
-curl -s https://hotel-cancellation.fly.dev/predict \
-  -H 'Content-Type: application/json' \
-  -d '{"hotel":"Resort Hotel","lead_time":400,"adr":320.0,"deposit_type":"Non Refund"}'
-```
-
-`auto_stop_machines = "stop"` means the service sleeps when idle and wakes on
-the first request, so it costs nothing while nobody is using it.
-
-### 10.4 Render (one click, no CLI)
+### 10.3 Render (one click, no CLI)
 
 `render.yaml` is a Render blueprint, so the service can be provisioned from the
 repository without any commands:
@@ -692,7 +664,7 @@ make render-info    # prints the three steps
 2. [https://render.com/](https://render.com/) → **New** → **Blueprint** → select the repository.
 3. Render detects `render.yaml`, builds the Docker image and deploys.
 
-### 10.5 Local Kubernetes
+### 10.4 Local Kubernetes
 
 The course also counts a local Kubernetes cluster as a cloud deployment.
 `kind` works with the same image:
